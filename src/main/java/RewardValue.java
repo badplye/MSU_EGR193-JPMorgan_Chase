@@ -1,7 +1,7 @@
 public class RewardValue {
     private double cashValue;
     private double milesValue;
-    private static final double CONVERSION_RATE = 0.0035;
+    public static final double CONVERSION_RATE = 0.0035;
 
     public RewardValue(double cashValue) {
         this.milesValue = cashValue / CONVERSION_RATE;
@@ -12,12 +12,12 @@ public class RewardValue {
         this.cashValue = milesValue * CONVERSION_RATE;
     }
 
-    public double getCashValue() {
-        return cashValue;
+    public int getCashValue() {
+        return (int) Math.round(cashValue);
     }
 
-    public double getMilesValue() {
-        return milesValue;
+    public int getMilesValue() {
+        return (int) Math.round(milesValue);
     }
 
 }
